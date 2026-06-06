@@ -1,149 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portafolio profesional de Evelin Patricia Valderrama Montoya, profesional en finanzas, inversiones financieras, gestión comercial, analítica de datos y riesgos financieros." />
-  <title>Portafolio | Evelin Patricia Valderrama Montoya</title>
-  <style>
-    :root{
-      --ink:#23262c;
-      --muted:#65707a;
-      --paper:#fbf6ec;
-      --white:#ffffff;
-      --orange:#f39a2f;
-      --orange-dark:#c06b10;
-      --blue:#a8d3e8;
-      --blue-deep:#456a7a;
-      --sand:#eadfc9;
-      --line:rgba(35,38,44,.12);
-      --shadow:0 24px 70px rgba(36,40,48,.14);
-      --radius:28px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at 82% 5%, rgba(168,211,232,.72), transparent 28%),
-        radial-gradient(circle at 8% 18%, rgba(243,154,47,.22), transparent 28%),
-        linear-gradient(135deg,#fffaf1 0%,#f7efe1 55%,#edf6f9 100%);
-      line-height:1.65;
-    }
-    a{color:inherit;text-decoration:none}
-    .topbar{
-      position:sticky;top:0;z-index:10;
-      backdrop-filter:blur(16px);
-      background:rgba(251,246,236,.78);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      max-width:1160px;margin:auto;padding:14px 22px;
-      display:flex;align-items:center;justify-content:space-between;gap:18px;
-    }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-    .brand-mark{width:38px;height:38px;border-radius:14px;background:linear-gradient(135deg,var(--orange),var(--blue));box-shadow:0 12px 28px rgba(243,154,47,.25)}
-    .nav-links{display:flex;gap:14px;flex-wrap:wrap;font-size:.92rem;color:var(--muted);font-weight:650}
-    .nav-links a{padding:8px 10px;border-radius:999px}
-    .nav-links a:hover{background:rgba(255,255,255,.7);color:var(--ink)}
-    .print-btn{
-      border:0;cursor:pointer;border-radius:999px;padding:12px 18px;
-      color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange-dark));
-      font-weight:800;box-shadow:0 12px 24px rgba(192,107,16,.23);
-    }
-    .page{max-width:1160px;margin:0 auto;padding:34px 22px 70px}
-    .hero{
-      display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:stretch;margin-top:22px;
-    }
-    .hero-card,.portrait-card,.section,.contact-card{
-      background:rgba(255,255,255,.82);border:1px solid var(--line);
-      border-radius:var(--radius);box-shadow:var(--shadow);
-    }
-    .hero-card{padding:46px;position:relative;overflow:hidden}
-    .hero-card:after{content:"";position:absolute;right:-110px;top:38px;width:260px;height:72px;border-radius:999px;background:var(--orange);transform:rotate(-18deg);opacity:.9}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(168,211,232,.45);color:var(--blue-deep);font-weight:800;font-size:.88rem}
-    h1{font-size:clamp(2.1rem,5vw,4.75rem);line-height:.98;margin:22px 0 16px;letter-spacing:-.05em}
-    .lead{font-size:1.18rem;color:var(--muted);max-width:780px;margin:0 0 26px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--ink)}
-    .btn.primary{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;border:0}
-    .btn:hover{transform:translateY(-1px)}
-    .portrait-card{padding:18px;display:flex;flex-direction:column;gap:16px;overflow:hidden}
-    .portrait-wrap{border-radius:24px;overflow:hidden;background:linear-gradient(135deg,var(--blue),var(--sand));min-height:420px;display:flex;align-items:center;justify-content:center}
-    .portrait-wrap img{width:100%;height:100%;min-height:420px;object-fit:cover;display:block}
-    .quote{padding:4px 6px 8px;color:var(--muted);font-weight:650}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-    .stat{padding:18px;border-radius:22px;background:rgba(251,246,236,.74);border:1px solid var(--line)}
-    .stat strong{display:block;font-size:1.72rem;line-height:1;color:var(--orange-dark)}
-    .stat span{display:block;margin-top:8px;color:var(--muted);font-size:.92rem;font-weight:650}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
-    .section{padding:30px}
-    .section.full{grid-column:1/-1}
-    .section h2{font-size:1.55rem;margin:0 0 14px;letter-spacing:-.02em}
-    .section p{margin:0;color:var(--muted)}
-    .tagline{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .tag{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:750;color:var(--blue-deep);font-size:.9rem}
-    .timeline{display:grid;gap:14px;margin-top:16px}
-    .item{padding:18px;border-left:5px solid var(--orange);border-radius:18px;background:rgba(255,255,255,.72);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .item h3{margin:0 0 6px;font-size:1.05rem}
-    .item p{margin:0;color:var(--muted)}
-    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-    .contact-card{padding:20px;box-shadow:none}
-    .contact-card small{display:block;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-    .contact-card a,.contact-card strong{display:block;margin-top:8px;font-size:1rem;font-weight:800;word-break:break-word}
-    footer{text-align:center;color:var(--muted);padding:34px 0 0;font-size:.92rem}
-    @media(max-width:860px){
-      .hero,.grid,.contact-grid{grid-template-columns:1fr}
-      .section.full{grid-column:auto}
-      .hero-card{padding:32px}
-      .stats{grid-template-columns:1fr}
-      .nav{align-items:flex-start;flex-direction:column}
-      .portrait-wrap,.portrait-wrap img{min-height:360px}
-    }
-    @media print{
-      body{background:#fff;color:#111}
-      .topbar,.hero-actions,.print-btn{display:none!important}
-      .page{padding:0;max-width:100%}
-      .hero,.grid,.contact-grid{display:block}
-      .hero-card,.portrait-card,.section,.contact-card{box-shadow:none;border:1px solid #ddd;margin:0 0 14px;break-inside:avoid;background:#fff}
-      .portrait-card{max-width:280px;float:right;margin-left:18px}
-      .portrait-wrap,.portrait-wrap img{min-height:auto}
-      h1{font-size:2.4rem}
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portafolio | Evelin Patricia Valderrama Montoya</title>
+<meta name="description" content="Portafolio profesional de Evelin Patricia Valderrama Montoya: finanzas, inversiones, gestión comercial, analítica de datos y riesgos financieros.">
+<style>
+:root{--t:#23262c;--m:#626b74;--o:#f39a2f;--od:#bd6812;--b:#a8d3e8;--bd:#456a7a;--p:#fbf6ec;--w:#fff;--l:rgba(35,38,44,.14);--s:0 24px 65px rgba(35,38,44,.15)}*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,Roboto,Arial,sans-serif;color:var(--t);line-height:1.65;background:radial-gradient(circle at 84% 6%,rgba(168,211,232,.75),transparent 30%),radial-gradient(circle at 8% 12%,rgba(243,154,47,.22),transparent 28%),linear-gradient(135deg,#fffaf1,#f4ead9 55%,#edf7fb)}a{text-decoration:none;color:inherit}.nav{position:sticky;top:0;z-index:5;background:rgba(251,246,236,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--l)}.navin{max-width:1120px;margin:auto;padding:13px 20px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.brand{font-weight:900;display:flex;gap:10px;align-items:center}.mark{width:36px;height:36px;border-radius:14px;background:linear-gradient(135deg,var(--o),var(--b));box-shadow:0 12px 25px rgba(243,154,47,.22)}.links{display:flex;gap:12px;flex-wrap:wrap;color:var(--m);font-weight:700;font-size:.92rem}.links a{padding:7px 9px;border-radius:20px}.links a:hover{background:#fff;color:var(--t)}button,.btn{border:0;border-radius:999px;padding:12px 17px;font-weight:900;cursor:pointer;background:linear-gradient(135deg,var(--o),var(--od));color:white;box-shadow:0 12px 25px rgba(189,104,18,.22)}.btn.secondary{background:#fff;color:var(--t);border:1px solid var(--l);box-shadow:none}.wrap{max-width:1120px;margin:auto;padding:34px 20px 60px}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:stretch}.card{background:rgba(255,255,255,.84);border:1px solid var(--l);border-radius:28px;box-shadow:var(--s)}.intro{padding:44px;position:relative;overflow:hidden}.intro:after{content:"";position:absolute;right:-95px;top:35px;width:235px;height:66px;border-radius:999px;background:var(--o);transform:rotate(-18deg);opacity:.9}.tag{display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(168,211,232,.48);color:var(--bd);font-weight:900}h1{font-size:clamp(2.2rem,5vw,4.6rem);line-height:.98;margin:20px 0 16px;letter-spacing:-.05em}.lead{font-size:1.15rem;color:var(--m);max-width:780px;margin:0}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.photo{padding:16px;overflow:hidden}.pic{min-height:420px;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,var(--b),#eadfc9);display:flex;align-items:center;justify-content:center}.pic img{width:100%;height:100%;min-height:420px;object-fit:cover;display:block}.quote{color:var(--m);font-weight:700;padding:3px 6px 7px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.stat{background:rgba(251,246,236,.8);border:1px solid var(--l);border-radius:20px;padding:17px}.stat b{display:block;color:var(--od);font-size:1.65rem;line-height:1}.stat span{display:block;color:var(--m);font-size:.9rem;font-weight:700;margin-top:7px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}.section{padding:30px}.section.full{grid-column:1/-1}h2{margin:0 0 14px;font-size:1.55rem;letter-spacing:-.02em}p{margin:0;color:var(--m)}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.chip{background:#fff;border:1px solid var(--l);border-radius:999px;padding:8px 12px;color:var(--bd);font-weight:800}.item{padding:17px;border-left:5px solid var(--o);border-radius:17px;background:rgba(255,255,255,.72);border-top:1px solid var(--l);border-right:1px solid var(--l);border-bottom:1px solid var(--l);margin-top:13px}.item h3{margin:0 0 5px;font-size:1.05rem}.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}.mini{padding:18px;background:#fff;border:1px solid var(--l);border-radius:20px}.mini small{display:block;color:var(--m);font-weight:900;text-transform:uppercase;letter-spacing:.08em}.mini strong,.mini a{display:block;margin-top:8px;font-weight:900;word-break:break-word}footer{text-align:center;color:var(--m);padding-top:32px;font-size:.9rem}@media(max-width:850px){.hero,.grid,.contact{grid-template-columns:1fr}.section.full{grid-column:auto}.intro{padding:31px}.stats{grid-template-columns:1fr}.pic,.pic img{min-height:360px}}@media print{body{background:#fff}.nav,.actions,button{display:none!important}.wrap{padding:0}.hero,.grid,.contact{display:block}.card,.section,.mini{box-shadow:none;border:1px solid #ddd;margin-bottom:12px;break-inside:avoid;background:#fff}.photo{max-width:270px;float:right;margin-left:16px}.pic,.pic img{min-height:auto}h1{font-size:2.2rem}}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <nav class="nav" aria-label="Navegación principal">
-      <a class="brand" href="#inicio" aria-label="Inicio"><span class="brand-mark"></span><span>Evelin Valderrama</span></a>
-      <div class="nav-links">
-        <a href="#perfil">Perfil</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#formacion">Formación</a>
-        <a href="#futuro">Proyección</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-      <button class="print-btn" onclick="window.print()">Exportar a PDF</button>
-    </nav>
-  </header>
-
-  <main id="inicio" class="page">
-    <section class="hero" aria-labelledby="titulo">
-      <div class="hero-card">
-        <span class="eyebrow">Profesional en finanzas · Bancolombia</span>
-        <h1 id="titulo">Evelin Patricia Valderrama Montoya</h1>
-        <p class="lead">Portafolio profesional enfocado en gestión comercial, inversiones financieras, analítica de datos y administración de riesgos financieros.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="mailto:evelinvalderrama164580@correo.itm.edu.co">Contactar por correo</a>
-          <a class="btn" href="tel:+573143208355">Llamar al 314 320 8355</a>
-        </div>
-        <div class="stats" aria-label="Indicadores profesionales">
-          <div class="stat"><strong>10+</strong><span>años de experiencia en Bancolombia</span></div>
-          <div class="stat"><strong>360°</strong><span>visión comercial, financiera y analítica</span></div>
-          <div class="stat"><strong>Data</strong><span>enfoque en riesgos y toma de decisiones</span></div>
-        </div>
-      </div>
-      <aside class="portrait-card" aria-label="Fotografía profesional">
-        <div class="portrait-wrap"><img src="data:image/jpeg;base64,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... [TRUNCATED]
+<header class="nav"><div class="navin"><a class="brand" href="#inicio"><span class="mark"></span><span>Evelin Valderrama</span></a><div class="links"><a href="#perfil">Perfil</a><a href="#experiencia">Experiencia</a><a href="#formacion">Formación</a><a href="#futuro">Proyección</a><a href="#contacto">Contacto</a></div><button onclick="window.print()">Exportar a PDF</button></div></header>
+<main id="inicio" class="wrap">
+<section class="hero">
+<div class="card intro"><span class="tag">Profesional en finanzas · Bancolombia</span><h1>Evelin Patricia Valderrama Montoya</h1><p class="lead">Portafolio profesional enfocado en gestión comercial, inversiones financieras, analítica de datos y administración de riesgos financieros.</p><div class="actions"><a class="btn" href="mailto:evelinvalderrama164580@correo.itm.edu.co">Contactar por correo</a><a class="btn secondary" href="tel:+573143208355">Llamar al 314 320 8355</a></div><div class="stats"><div class="stat"><b>10+</b><span>años de experiencia en Bancolombia</span></div><div class="stat"><b>360°</b><span>visión comercial, financiera y analítica</span></div><div class="stat"><b>Data</b><span>enfoque en riesgos y toma de decisiones</span></div></div></div>
+<aside class="card photo"><div class="pic"><img alt="Evelin Patricia Valderrama Montoya" src="data:image/jpeg;base64,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"></div><p class="quote">Compromiso, criterio financiero y orientación a resultados para generar valor en cada decisión.</p></aside>
+</section>
+<section class="grid">
+<article id="perfil" class="card section full"><h2>Sobre mí</h2><p>Soy profesional en finanzas con alto conocimiento en inversiones financieras y una trayectoria sólida en Bancolombia. Mi perfil integra experiencia comercial, lectura analítica del negocio y capacidad para interpretar información financiera con enfoque estratégico. Me caracterizo por brindar acompañamiento responsable a los clientes, identificar oportunidades de crecimiento y apoyar la toma de decisiones con criterio técnico, ético y orientado a resultados. Durante mi trayectoria he fortalecido competencias en gestión de portafolios, análisis de comportamiento financiero, cumplimiento de objetivos comerciales y administración de riesgos, aportando valor tanto a la organización como a los usuarios del sistema financiero.</p><div class="chips"><span class="chip">Inversiones financieras</span><span class="chip">Gestión comercial</span><span class="chip">Analítica de datos</span><span class="chip">Riesgos financieros</span><span class="chip">Servicio al cliente</span></div></article>
+<article id="experiencia" class="card section"><h2>Experiencia profesional</h2><div class="item"><h3>Bancolombia · Área comercial y analítica</h3><p>10 años de experiencia en la entidad, participando en procesos comerciales, acompañamiento financiero, análisis de información y apoyo en riesgos financieros. Esta experiencia me ha permitido desarrollar una visión integral del cliente, del mercado y de los indicadores clave para la toma de decisiones.</p></div></article>
+<article id="formacion" class="card section"><h2>Formación profesional</h2><div class="item"><h3>Tecnóloga en Gestión Administrativa</h3><p>Formación orientada a procesos administrativos, organización empresarial, servicio y gestión eficiente de recursos.</p></div><div class="item"><h3>Cursos cortos</h3><p>Curso Escuela de Negocios Bancolombia. Curso de Contabilidad Sistemática del Tecnológico de Antioquia.</p></div></article>
+<article id="futuro" class="card section"><h2>Proyección profesional</h2><p>Mi proyecto a futuro es continuar creciendo dentro de Bancolombia y proyectarme hacia un cargo de Gerente de Comercio, liderando equipos con enfoque humano, estratégico y basado en datos. Aspiro a contribuir al fortalecimiento comercial de la entidad mediante soluciones financieras responsables, mayor cercanía con los clientes, desarrollo de negocios sostenibles y una gestión que combine conocimiento financiero, análisis de riesgos y visión de crecimiento.</p></article>
+<article id="contacto" class="card section"><h2>Contacto profesional</h2><p>Medios tecnológicos de contacto para oportunidades profesionales, networking y comunicación laboral.</p><div class="contact"><div class="mini"><small>Correo</small><a href="mailto:evelinvalderrama164580@correo.itm.edu.co">evelinvalderrama164580@correo.itm.edu.co</a></div><div class="mini"><small>Teléfono</small><a href="tel:+573143208355">314 320 8355</a></div><div class="mini"><small>Ubicación laboral</small><strong>Sector financiero · Bancolombia</strong></div></div></article>
+</section>
+<footer>Portafolio profesional de Evelin Patricia Valderrama Montoya · Publicado en GitHub Pages</footer>
+</main>
+</body>
+</html>
